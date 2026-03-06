@@ -12,8 +12,10 @@ class LocationForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label('Nama Lokasi')
                     ->required(),
-                TextInput::make('building'),
+                TextInput::make('building')
+                    ->label('Gedung / Bangunan'),
             ]);
     }
 }

@@ -6,6 +6,201 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Custom Minimalist Theme for Filament */
+/* Override default Filament styles for minimal, clean design */
+
+/* Login Page - Centered Card Layout */
+.fi-login-page {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    min-height: 100vh;
+}
+
+.fi-login-card {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.fi-login-form {
+    padding: 2rem;
+}
+
+.fi-login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.fi-login-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #1e293b;
+    margin: 0;
+    letter-spacing: -0.025em;
+}
+
+/* Hide default logo */
+.fi-login-brand {
+    display: none;
+}
+
+/* Form Styles - Minimalist */
+.fi-input {
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+    background: white;
+    transition: all 0.15s ease-in-out;
+}
+
+.fi-input:focus {
+    border-color: #475569;
+    box-shadow: 0 0 0 1px #475569;
+}
+
+/* Button Styles - Minimalist */
+.fi-button {
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.15s ease-in-out;
+}
+
+.fi-button-primary {
+    background: #475569;
+    border: 1px solid #475569;
+}
+
+.fi-button-primary:hover {
+    background: #334155;
+    border-color: #334155;
+}
+
+/* Table Styles - Clean and Minimal */
+.fi-table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.fi-table th {
+    border-bottom: 1px solid #e2e8f0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-weight: 600;
+    color: #475569;
+    background: #f8fafc;
+}
+
+.fi-table td {
+    border-bottom: 1px solid #f1f5f9;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+
+.fi-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* Card Styles - Minimal */
+.fi-card {
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+    background: white;
+}
+
+/* Navigation - Top Navigation Minimalist */
+.fi-top-nav {
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: none;
+}
+
+.fi-top-nav-item {
+    color: #64748b;
+    font-weight: 500;
+    transition: color 0.15s ease-in-out;
+}
+
+.fi-top-nav-item:hover,
+.fi-top-nav-item.active {
+    color: #1e293b;
+}
+
+/* Sidebar - Minimal */
+.fi-sidebar {
+    background: #f8fafc;
+    border-right: 1px solid #e2e8f0;
+}
+
+.fi-sidebar-item {
+    border-radius: 0.5rem;
+    margin: 0.25rem;
+    transition: all 0.15s ease-in-out;
+}
+
+.fi-sidebar-item:hover {
+    background: #f1f5f9;
+}
+
+.fi-sidebar-item.active {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+/* Form Grid Layout - 2 Column */
+.fi-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .fi-form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Compact Form Inputs */
+.fi-form-input {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+/* Remove unnecessary shadows */
+.fi-panel,
+.fi-section,
+.fi-container {
+    box-shadow: none;
+}
+
+/* Global minimal styling */
+* {
+    border-radius: 0.5rem;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
 }

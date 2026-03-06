@@ -12,8 +12,11 @@ class CategoryForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label('Nama Kategori')
                     ->required(),
-                TextInput::make('description'),
+                TextInput::make('description')
+                    ->label('Deskripsi')
+
             ]);
     }
 }

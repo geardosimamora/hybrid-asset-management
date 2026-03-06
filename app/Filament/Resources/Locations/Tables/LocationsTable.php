@@ -17,14 +17,18 @@ class LocationsTable
                 TextColumn::make('id')
                     ->label('ID'),
                 TextColumn::make('name')
+                    ->label('Nama Lokasi')
                     ->searchable(),
                 TextColumn::make('building')
+                    ->label('Gedung / Area')
                     ->searchable(),
                 TextColumn::make('created_at')
+                    ->label('Dibuat')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label('Diperbarui')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

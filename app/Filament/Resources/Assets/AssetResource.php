@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Assets;
 use App\Filament\Resources\Assets\Pages\CreateAsset;
 use App\Filament\Resources\Assets\Pages\EditAsset;
 use App\Filament\Resources\Assets\Pages\ListAssets;
+use App\Filament\Resources\Assets\RelationManagers\MovementsRelationManager;
 use App\Filament\Resources\Assets\Schemas\AssetForm;
 use App\Filament\Resources\Assets\Tables\AssetsTable;
 use App\Models\Asset;
@@ -17,7 +18,11 @@ class AssetResource extends Resource
     protected static ?string $model = Asset::class;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-cube';
-    protected static string|\UnitEnum|null $navigationGroup = 'Operational';
+    protected static string|\UnitEnum|null $navigationGroup = 'Operasional';
+
+    protected static ?string $modelLabel = 'Aset';
+    protected static ?string $pluralModelLabel = 'Data Aset';
+
     protected static ?string $recordTitleAttribute = 'name';
 
     public static function form(Schema $schema): Schema
@@ -27,21 +32,22 @@ class AssetResource extends Resource
 
     public static function table(Table $table): Table
     {
-        // Kode ini harus bersih, hanya memanggil class AssetsTable
         return AssetsTable::configure($table);
     }
 
     public static function getRelations(): array
     {
-        return [];
+        return [
+            MovementsRelationManager::class,
+        ];
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => ListAssets::route('/'),
+            'index'  => ListAssets::route('/'),
             'create' => CreateAsset::route('/create'),
-            'edit' => EditAsset::route('/{record}/edit'),
+            'edit'   => EditAsset::route('/{record}/edit'),
         ];
     }
 }
